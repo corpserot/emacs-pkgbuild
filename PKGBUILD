@@ -35,8 +35,8 @@ JIT="YES"         # Enable native just-in-time compilation with libgccjit availa
                   # ELPA, MELPA, whatever), add
                   #    (setq native-comp-deferred-compilation t)
                   # to your .emacs file.
-                  # 
-                  # And to keep the eln cache clean add 
+                  #
+                  # And to keep the eln cache clean add
                   #    (setq native-compile-prune-cache t)
                   # to delete old versions.
 
@@ -50,7 +50,7 @@ GPM=YES           # Mouse support in Linux console using gpmd.
 
 NOTKIT=           # Use no toolkit widgets. Like B&W Twm (001d sk00l).
                   # Bitmap fonts only, 1337!
-               
+
 PGTK=             # Use native GTK3 build. Supports Wayland, yay! Still
                   # has some problems if running under Xorg. Remember,
                   # this is my personal build file!
@@ -70,19 +70,19 @@ XI2="YES"         # Use Xinput2 support.
 
 ALSA=YES          # Linux sound support.
 
-NOCAIRO=          # Disable here. 
-               
+NOCAIRO=          # Disable here.
+
 XWIDGETS=YES      # Use GTK+ widgets pulled from webkit2gtk. Usable.
 
 SITTER="YES"      # Use tree-sitter incremental language parsing.
-               
+
 NOSQLITE3=        # Disable sqlite3 support.
 
 DOCS_HTML=        # Generate and install html documentation.
-               
+
 DOCS_PDF=         # Generate and install pdf documentation. You need
                   # a TeX installation. I'm partial to upstream TeXLive.
-               
+
 NOGZ="YES"        # Don't compress .el files. (Gain is neglible, IMHO)
 
 ################################################################################
@@ -93,7 +93,7 @@ if [[ $CLI == "YES" ]] ; then
 else
   pkgname="emacs-git"
 fi
-pkgver=30.0.50.166575
+pkgver=30.0.50.3084
 pkgrel=1
 pkgdesc="GNU Emacs. Development master branch."
 arch=('x86_64')
@@ -104,7 +104,7 @@ depends=("${depends_nox[@]}" 'harfbuzz')
 makedepends=('git')
 provides=('emacs')
 conflicts=('emacs')
-source=("emacs-git::git+https://git.savannah.gnu.org/git/emacs.git"
+source=("emacs-git::git+https://github.com/emacs-mirror/emacs"
         "nemacs")
 options=(!strip)
 install=emacs-git.install
@@ -393,7 +393,7 @@ package() {
   make DESTDIR="$pkgdir/" install
 
   install -D -m 755 "$srcdir"/nemacs "$pkgdir"/usr/bin/nemacs
-  
+
   #if [[ ! $CLI == "YES" ]]; then
 
   # Install optional documentation formats
