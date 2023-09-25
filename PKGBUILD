@@ -26,7 +26,7 @@ CLANG=            # Use clang.
 
 GOLD=             # Use the gold linker.
 
-LTO=              # Enable link-time optimization. Still experimental.
+LTO=YES           # Enable link-time optimization. Still experimental.
 
 JIT="YES"         # Enable native just-in-time compilation with libgccjit available
                   # in core. This compiles only performance critical elisp files.
@@ -40,13 +40,13 @@ JIT="YES"         # Enable native just-in-time compilation with libgccjit availa
                   #    (setq native-compile-prune-cache t)
                   # to delete old versions.
 
-AOT=              # Compile all elisp files provided by upstream.
+AOT=YES           # Compile all elisp files provided by upstream.
 
-TRAMPOLINES=      # Compile jitted elisp files with trampolines.
+TRAMPOLINES=YES   # Compile jitted elisp files with trampolines.
 
 CLI=              # CLI only binary.
 
-GPM=              # Mouse support in Linux console using gpmd.
+GPM=YES           # Mouse support in Linux console using gpmd.
 
 NOTKIT=           # Use no toolkit widgets. Like B&W Twm (001d sk00l).
                   # Bitmap fonts only, 1337!
@@ -68,11 +68,11 @@ LUCID=            # Use the lucid, a.k.a athena, toolkit. Like XEmacs, sorta.
 XI2="YES"         # Use Xinput2 support.
                   # https://www.x.org/releases/X11R7.7/doc/inputproto/XI2proto.txt
 
-ALSA=             # Linux sound support.
+ALSA=YES          # Linux sound support.
 
 NOCAIRO=          # Disable here. 
                
-XWIDGETS=         # Use GTK+ widgets pulled from webkit2gtk. Usable.
+XWIDGETS=YES      # Use GTK+ widgets pulled from webkit2gtk. Usable.
 
 SITTER="YES"      # Use tree-sitter incremental language parsing.
                
